@@ -1,0 +1,231 @@
+/* HomeCard.css */
+
+/* === PG CARDS GRID === */
+.Homecards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 cards per row on large screens */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card styling */
+.home-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.home-card:hover {
+    transform: scale(1.02);
+}
+
+.home-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.home-card-content {
+    padding: 15px;
+}
+
+.home-card-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.home-card-location {
+    font-size: 14px;
+    color: #777;
+    margin: 4px 0;
+}
+
+.home-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.home-card-price {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Heart icon style */
+.home-card-image {
+    position: relative;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.heart-icon:hover {
+    transform: scale(1.2);
+}
+
+/* === CATEGORY SECTION === */
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+    padding-left: 10px;
+}
+
+.no-data-message {
+    text-align: center;
+    padding: 30px;
+    color: #000000;
+    line-height: 1.8;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Scrollable category cards */
+.category-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.category-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.category-cards::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+/* Category buttons */
+.category-selector {
+    background: #f8f9fa;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.category-btn {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.category-btn:hover {
+    background-color: #e9ecef;
+    border-color: #ccc;
+}
+
+.category-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+}
+
+.category-wrapper {
+    grid-column: 1 / -1;
+    margin: 30px 0;
+}
+
+/* === RESPONSIVE GRID === */
+
+/* Large tablets: 3 cards per row */
+@media (max-width: 1200px) {
+    .Homecards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablets / small screens: 2 cards per row */
+@media (max-width: 768px) {
+    .Homecards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .category-btn {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}
+
+/* Mobile screens: 1 card per row */
+@media (max-width: 480px) {
+    .Homecards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .category-btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .category-selector {
+        padding: 10px;
+        gap: 8px;
+    }
+}
+
+
+.load-more-btn {
+    display: block;
+    margin: 30px auto;
+    /* centers the button */
+    padding: 10px 24px;
+    background-color: #000000;
+    /* primary blue */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.load-more-btn:hover {
+    background-color: #353535;
+    /* darker blue on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
