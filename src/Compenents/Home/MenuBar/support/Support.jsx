@@ -1,6 +1,5 @@
 import { Mail, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../../Navbar";
 import "./Support.css";
 const Support = () => {
   const navigate = useNavigate();
@@ -10,14 +9,14 @@ const Support = () => {
   return (
 
     <div>
-      <NavBar />
-
+      {/* <NavBar /> */}
+      <button className="back-btn-support" onClick={handleBack}>
+        {/* <FaArrowLeft /> Back */} back
+      </button>
       <div className="support-container">
 
         <div className="support-card">
-          <button className="back-btn" onClick={handleBack}>
-            {/* <FaArrowLeft /> Back */} back
-          </button>
+
           <h2>Support</h2>
           <p className="support-text">If you need help, feel free to contact us:</p>
 
