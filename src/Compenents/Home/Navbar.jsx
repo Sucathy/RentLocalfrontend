@@ -12,7 +12,7 @@ const Navbar = () => {
     <div>
       {/* Top navigation bar */}
       <nav className="navbar">
-        <div className="navbar-brand">PgLocal</div>
+        <div className="navbar-brand">VNS</div>
         <div className="menu-icon" onClick={toggleMenu}>
           ☰
         </div>

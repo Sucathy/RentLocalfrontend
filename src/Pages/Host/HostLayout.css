@@ -69,7 +69,7 @@
 }
 
 .back-btn {
-    background: #000000;
+    background: #ff1c42;
     color: white;
 }
 
@@ -79,18 +79,18 @@
 }
 
 .next-btn {
-    background: #000000;
+    background: #ff1c42;
     color: white;
 }
 
 .next-btn:hover,
 .back-btn:hover,
 .submit-btn:hover {
-    background: #333333;
+    background: #ff3153;
 }
 
 .submit-btn {
-    background: #000000;
+    background: #ff1c42;
     color: white;
 }
 

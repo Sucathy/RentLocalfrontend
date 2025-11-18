@@ -206,7 +206,7 @@
     margin: 30px auto;
     /* centers the button */
     padding: 10px 24px;
-    background-color: #000000;
+    background-color: #ff1c42;
     /* primary blue */
     color: #fff;
     font-size: 16px;
@@ -219,7 +219,7 @@
 }
 
 .load-more-btn:hover {
-    background-color: #353535;
+    background-color: #f06b81;
     /* darker blue on hover */
     transform: translateY(-8px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);

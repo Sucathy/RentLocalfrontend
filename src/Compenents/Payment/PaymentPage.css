@@ -92,12 +92,12 @@
 }
 
 .payment-btn {
-    background-color: #2563eb;
+    background-color: #ff1c42;
     color: #fff;
 }
 
 .payment-btn:hover {
-    background-color: #1e40af;
+    background-color: #f85771;
 }
 
 .book-dates-btn:disabled,

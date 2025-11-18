@@ -51,18 +51,18 @@
 }
 
 .footer-logo h2 {
-    color: #f8b400;
+    color: #ff1c42;
 }
 
 .footer-logo p {
-    color: #cccccc;
+    color: #ffffff;
     margin-top: 8px;
 }
 
 .footer-links h3,
 .footer-contact h3 {
     margin-bottom: 10px;
-    color: #f8b400;
+    color: #ff1c42;
 }
 
 .footer-links ul {
@@ -75,24 +75,24 @@
 }
 
 .footer-links ul li a {
-    color: #cccccc;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-links ul li a:hover {
-    color: #f8b400;
+    color: #ff1c42;
 }
 
 .footer-contact p {
     margin: 5px 0;
-    color: #cccccc;
+    color: #ffffff;
 }
 
 .footer-bottom {
     text-align: center;
     font-size: 14px;
-    color: #999999;
+    color: #ffffff;
 }
 
 .footer-bottom hr {

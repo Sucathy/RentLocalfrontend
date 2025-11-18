@@ -13,10 +13,11 @@
 
 /* Brand name */
 .navbar-brand {
-    font-size: 20px;
+    font-size: 50px;
     font-weight: bold;
     letter-spacing: 0.5px;
     cursor: pointer;
+    color: #ff1c42
 }
 
 /* Hamburger icon */
@@ -97,4 +98,13 @@
     .menu-icon {
         font-size: 24px;
     }
+}
+
+
+.navbar-logo {
+    height: 60px;
+    /* Adjust logo height */
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
 }
