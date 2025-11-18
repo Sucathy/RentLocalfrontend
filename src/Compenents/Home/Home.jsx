@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 // import HeroSection from '../HeroSection/HeroSection';
 const Home = () => <>
   <Navbar />
-  {/* <Searchpage /> */}
+
   {/* <HeroSection />  */}
   <HomeCard />
   <Fotter />
