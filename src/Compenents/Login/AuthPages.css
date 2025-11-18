@@ -27,7 +27,7 @@
 .auth-container button {
     width: 100%;
     padding: 10px;
-    background-color: #333;
+    background-color: #ff385c;
     color: white;
     font-size: 16px;
     border: none;
@@ -37,7 +37,7 @@
 }
 
 .auth-container button:hover {
-    background-color: #555;
+    background-color: #ff385c;
 }
 
 .auth-container a {

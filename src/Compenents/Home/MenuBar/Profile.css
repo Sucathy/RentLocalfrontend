@@ -58,7 +58,7 @@
 
 .upload-label {
     display: inline-block;
-    background: #333;
+    background: #ff385c;
     color: #fff;
     padding: 8px 16px;
     border-radius: 8px;
@@ -68,7 +68,7 @@
 }
 
 .upload-label:hover {
-    background: #555;
+    background: #ff385c;
 }
 
 /* Name heading */
@@ -125,39 +125,39 @@
 
 /* Edit / Save button color variants */
 .profile-edit {
-    background: #333;
+    background: #ff385c;
     color: #fff;
 }
 
 .profile-edit:hover {
-    background: #555;
+    background: #ff385c;
 }
 
 .profile-save {
-    background: #000000;
+    background: #ff385c;
     color: white;
 }
 
 .profile-save:hover {
-    background: #353535;
+    background: #ff385c;
 }
 
 .profile-cancel {
-    background: #000000;
+    background: #ff385c;
     color: #ffffff;
 }
 
 .profile-cancel:hover {
-    background: #656565;
+    background: #ff385c;
 }
 
 .profile-logout {
-    background: #000000;
+    background: #ff385c;
     color: white;
 }
 
 .profile-logout:hover {
-    background: #b52b36;
+    background: #ff385c;
 }
 
 /* When user is not logged in */
@@ -255,19 +255,19 @@
 }
 
 .login-link {
-    background-color: #000000;
+    background-color: #ff385c;
     color: #fff;
 }
 
 .login-link:hover {
-    background-color: #767676;
+    background-color: #ff385c;
 }
 
 .signup-link {
-    background-color: #000000;
+    background-color: #ff385c;
     color: #fff;
 }
 
 .signup-link:hover {
-    background-color: #9f9f9f;
+    background-color: #ff385c;
 }

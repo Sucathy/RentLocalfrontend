@@ -135,7 +135,7 @@ const Profile = () => {
           </div>
         )}
 
-        <h2 className="profile-name">{user.fullName || user.username}</h2>
+        <h2 className="profile-name">{user.username || user.fullName}</h2>
 
         <table className="profile-table">
           <tbody>
