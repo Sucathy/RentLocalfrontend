@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.2",
     "cors": "^2.8.5",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.553.0",
     "razorpay": "^2.9.6",
     "react": "^19.1.0",
