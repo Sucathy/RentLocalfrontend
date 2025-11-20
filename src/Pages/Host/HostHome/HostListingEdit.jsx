@@ -111,7 +111,7 @@ const HostListingEdit = () => {
     };
 
     // -----------------------------------------------------
-    // ADD IMAGE BY URL
+    // ADD IMAGE BY URL something happend
     // -----------------------------------------------------
     const handleAddImage = () => {
         if (!newImageUrl.trim()) return;
