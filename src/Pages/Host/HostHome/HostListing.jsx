@@ -208,7 +208,7 @@ const HostListing = () => {
 
     /** ✅ Edit listing */
     const handleEdit = (id) => {
-        navigate(`/host/edit-listing/${id}`);
+        navigate(`/edit-listing/${id}`);
     };
 
     return (

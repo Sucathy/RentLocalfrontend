@@ -143,6 +143,7 @@ function App() {
         <Route path="/guest-house" element={<CategoryGuestHouseSection />} />
         <Route path="/farm" element={<CategoryFarmSection />} />
 
+        <Route path="edit-listing/:id" element={<HostListingEdit />} />
         {/* Host Pages */}
         <Route path="/hostes" element={<HostHome />} />
         <Route path="/host" element={<HostLayout />}>
@@ -157,8 +158,9 @@ function App() {
           <Route path="images" element={<Step6Images />} />
           <Route path="price" element={<Step2Price />} />
           <Route path="title" element={<Step7Title />} />
-          <Route path="edit-listing/:id" element={<HostListingEdit />} />
+
         </Route>
+
         {/*  */}
       </Routes>
     </Router>

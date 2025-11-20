@@ -44,7 +44,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 6px;
 }
 
 /* First image = big one */
@@ -90,8 +90,8 @@
 /* Modal Content */
 .modal-content {
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 10px;
+    border-radius: 5px;
     max-width: 900px;
     width: 95%;
     max-height: 90vh;
@@ -365,5 +365,42 @@
     .pg-info-right {
         width: 100%;
         margin-top: 2rem;
+    }
+}
+
+/* === PG IMAGES GRID === */
+.pg-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop layout unchanged */
+    gap: 10px;
+}
+
+/* Tablet landscape (3 per row) */
+@media (max-width: 1024px) {
+    .pg-images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablets portrait (2 per row) */
+@media (max-width: 768px) {
+    .pg-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (1 per row - perfect clean layout) */
+@media (max-width: 480px) {
+    .pg-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+
+    .pg-images img {
+        height: 120px;
+        /* clean height for mobile */
+        object-fit: cover;
+        border-radius: 10px;
     }
 }

@@ -181,12 +181,30 @@
     }
 }
 
-/* Mobile screens: 1 card per row */
+/* Mobile screens: 2 cards per row */
 @media (max-width: 480px) {
     .Homecards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
         gap: 10px;
         padding: 10px;
+    }
+
+    .home-card-image img {
+        height: 150px;
+        /* smaller image, fits 2 column layout */
+    }
+
+    .home-card-title {
+        font-size: 14px;
+    }
+
+    .home-card-location {
+        font-size: 12px;
+    }
+
+    .home-card-price {
+        font-size: 14px;
     }
 
     .category-btn {
