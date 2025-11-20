@@ -161,57 +161,65 @@ const HostListingEdit = () => {
                 <form onSubmit={handleSubmit} className="host-edit-form">
 
                     {/* PROPERTY TYPE */}
-                    <div className="nested-section">
-                        <h4>Property details</h4>
-                        <div className="form-group">
-                            <label>Property Type</label>
-                            <select
-                                name="propertyType"
-                                value={formData.propertyType}
-                                onChange={handleChange}
-                            >
-                                <option value="">Select Property Type</option>
-                                <option value="PG">PG</option>
-                                <option value="House">House</option>
-                                <option value="Flat">Flat</option>
-                                <option value="Apartment">Apartment</option>
-                                <option value="Guest House">Guest House</option>
-                                <option value="Farm">Farm</option>
-                            </select>
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>Property details</h4>
+                        </div>
+
+                        <div className="edit-right">
+
+                            <div className="form-group">
+                                <label>Property Type</label>
+                                <select
+                                    name="propertyType"
+                                    value={formData.propertyType}
+                                    onChange={handleChange}
+                                >
+                                    <option value="">Select Property Type</option>
+                                    <option value="PG">PG</option>
+                                    <option value="House">House</option>
+                                    <option value="Flat">Flat</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Guest House">Guest House</option>
+                                    <option value="Farm">Farm</option>
+                                </select>
+                            </div>
+
+                            {formData.propertyType === "PG" && (
+                                <div className="form-group">
+                                    <label>PG Type</label>
+                                    <input
+                                        name="pgType"
+                                        value={formData.pgType}
+                                        onChange={handleChange}
+                                        placeholder="Ex: Boys PG / Girls PG"
+                                    />
+                                </div>
+                            )}
+
+                            {formData.propertyType !== "PG" && formData.propertyType && (
+                                <div className="form-group">
+                                    <label>BHK Type</label>
+                                    <input
+                                        name="bhkType"
+                                        value={formData.bhkType}
+                                        onChange={handleChange}
+                                        placeholder="Ex: 1BHK / 2BHK"
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+
+                    {/* LOCATION */}
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>📍 Location Details</h4>
                         </div>
 
 
-                        {/* PG TYPE */}
-                        {formData.propertyType === "PG" && (
-                            <div className="form-group">
-                                <label>PG Type</label>
-                                <input
-                                    name="pgType"
-                                    value={formData.pgType}
-                                    onChange={handleChange}
-                                    placeholder="Ex: Boys PG / Girls PG"
-                                />
-                            </div>
-                        )}
-
-                        {/* BHK TYPE */}
-                        {formData.propertyType !== "PG" && formData.propertyType && (
-                            <div className="form-group">
-                                <label>BHK Type</label>
-                                <input
-                                    name="bhkType"
-                                    value={formData.bhkType}
-                                    onChange={handleChange}
-                                    placeholder="Ex: 1BHK / 2BHK"
-                                />
-                            </div>
-                        )}
-                    </div>
-
-                    {/* LOCATION */}
-                    <div className="nested-section">
-                        <h4>📍 Location Details</h4>
-                        <div className="nested-grid">
+                        <div className="edit-right">
                             {Object.entries(formData.location).map(([key, value]) => (
                                 <div className="form-group" key={key}>
                                     <label>{key.toUpperCase()}</label>
@@ -227,26 +235,27 @@ const HostListingEdit = () => {
                     </div>
 
                     {/* LOCATION MAP */}
-                    <div className="nested-section">
-                        <h4>🗺️ Location Map</h4>
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>🗺️ Location Map</h4>
+                        </div>
 
-                        <EditableLocationMap
-                            coordinates={{
-                                lat: Number(formData.locationmap.latitude) || 12.9716,
-                                lng: Number(formData.locationmap.longitude) || 77.5946,
-                            }}
-                            onChange={(coords) =>
-                                setFormData((prev) => ({
-                                    ...prev,
-                                    locationmap: {
-                                        latitude: coords.lat.toFixed(6),
-                                        longitude: coords.lng.toFixed(6),
-                                    },
-                                }))
-                            }
-                        />
-
-                        <div className="nested-grid">
+                        <div className="edit-right">
+                            <EditableLocationMap
+                                coordinates={{
+                                    lat: Number(formData.locationmap.latitude) || 12.9716,
+                                    lng: Number(formData.locationmap.longitude) || 77.5946,
+                                }}
+                                onChange={(coords) =>
+                                    setFormData((prev) => ({
+                                        ...prev,
+                                        locationmap: {
+                                            latitude: coords.lat.toFixed(6),
+                                            longitude: coords.lng.toFixed(6),
+                                        },
+                                    }))
+                                }
+                            />
                             <div className="form-group">
                                 <label>Latitude</label>
                                 <input
@@ -267,12 +276,17 @@ const HostListingEdit = () => {
                                 />
                             </div>
                         </div>
+
+
                     </div>
 
                     {/* ROOM DETAILS */}
-                    <div className="nested-section">
-                        <h4>🛏️ Room Details</h4>
-                        <div className="nested-grid">
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>🛏️ Room Details</h4>
+                        </div>
+
+                        <div className="edit-right">
                             {Object.entries(formData.details).map(([key, value]) => (
                                 <div key={key} className="form-group">
                                     <label>{key.toUpperCase()}</label>
@@ -289,9 +303,12 @@ const HostListingEdit = () => {
                     </div>
 
                     {/* PRICING */}
-                    <div className="nested-section">
-                        <h4>💰 Pricing</h4>
-                        <div className="nested-grid">
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>💰 Pricing</h4>
+                        </div>
+
+                        <div className="edit-right">
                             <div className="form-group">
                                 <label>Monthly Price</label>
                                 <input
@@ -311,9 +328,12 @@ const HostListingEdit = () => {
                     </div>
 
                     {/* HOST DETAILS */}
-                    <div className="nested-section">
-                        <h4>👤 Host Details</h4>
-                        <div className="nested-grid">
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>👤 Host Details</h4>
+                        </div>
+
+                        <div className="edit-right">
                             <div className="form-group">
                                 <label>Name</label>
                                 <input
@@ -339,106 +359,114 @@ const HostListingEdit = () => {
                     {/* TITLE */}
 
 
-                    <div className="nested-section">
-                        <h4> PG Details</h4>
-                        <div className="form-group">
-                            <label>Title</label>
-                            <input
-                                name="title"
-                                value={formData.title}
-                                onChange={handleChange}
-                                placeholder="Add a catchy title"
-                            />
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4> PG Details</h4>
                         </div>
+                        <div className="edit-right">
+                            <div className="form-group">
+                                <label>Title</label>
+                                <input
+                                    name="title"
+                                    value={formData.title}
+                                    onChange={handleChange}
+                                    placeholder="Add a catchy title"
+                                />
+                            </div>
 
-                        {/* DESCRIPTION */}
-                        <div className="form-group">
-                            <label>Description</label>
-                            <textarea
-                                name="description"
-                                rows={3}
-                                value={formData.description}
-                                onChange={handleChange}
-                                placeholder="Write about your property"
-                            />
+                            {/* DESCRIPTION */}
+                            <div className="form-group">
+                                <label>Description</label>
+                                <textarea
+                                    name="description"
+                                    rows={3}
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    placeholder="Write about your property"
+                                />
+                            </div>
                         </div>
                     </div>
 
                     {/* IMAGES */}
-                    <div className="nested-section">
-                        <h4>🖼️ Images</h4>
-
-                        <div className="image-preview-wrapper">
-                            {formData.images.map((img, index) => (
-                                <div key={index} className="image-box">
-                                    <img
-                                        src={
-                                            img.startsWith("http")
-                                                ? img
-                                                : `${process.env.REACT_APP_API_BASE}/${img}`
-                                        }
-                                        alt="listing"
-                                        className="preview-img"
-                                    />
-                                    <button
-                                        type="button"
-                                        className="delete-img-btn"
-                                        onClick={() => handleDeleteImage(index)}
-                                    >
-                                        ✖
-                                    </button>
-                                </div>
-                            ))}
+                    <div className="edit-section">
+                        <div className="edit-left">
+                            <h4>🖼️ Images</h4>
                         </div>
 
-                        {/* FILE UPLOAD */}
-                        <label className="add-image-box">
-                            <span className="plus-icon">+ Upload Image</span>
-                            <input
-                                type="file"
-                                accept="image/*"
-                                style={{ display: "none" }}
-                                onChange={async (e) => {
-                                    const file = e.target.files?.[0];
-                                    if (!file) return;
-
-                                    try {
-                                        const formDataUpload = new FormData();
-                                        formDataUpload.append("image", file);
-
-                                        const uploadRes = await axios.post(
-                                            `${process.env.REACT_APP_API_BASE}/api/hostuser/upload-image`,
-                                            formDataUpload,
-                                            {
-                                                headers: { "Content-Type": "multipart/form-data" },
+                        <div className="edit-right">
+                            <div className="image-preview-wrapper">
+                                {formData.images.map((img, index) => (
+                                    <div key={index} className="image-box">
+                                        <img
+                                            src={
+                                                img.startsWith("http")
+                                                    ? img
+                                                    : `${process.env.REACT_APP_API_BASE}/${img}`
                                             }
-                                        );
+                                            alt="listing"
+                                            className="preview-img"
+                                        />
+                                        <button
+                                            type="button"
+                                            className="delete-img-btn"
+                                            onClick={() => handleDeleteImage(index)}
+                                        >
+                                            ✖
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
 
-                                        if (uploadRes.data?.imageUrl) {
-                                            setFormData((prev) => ({
-                                                ...prev,
-                                                images: [...prev.images, uploadRes.data.imageUrl],
-                                            }));
+                            {/* FILE UPLOAD */}
+                            <label className="add-image-box">
+                                <span className="plus-icon">+Add Image</span>
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    style={{ display: "none" }}
+                                    onChange={async (e) => {
+                                        const file = e.target.files?.[0];
+                                        if (!file) return;
+
+                                        try {
+                                            const formDataUpload = new FormData();
+                                            formDataUpload.append("image", file);
+
+                                            const uploadRes = await axios.post(
+                                                `${process.env.REACT_APP_API_BASE}/api/hostuser/upload-image`,
+                                                formDataUpload,
+                                                {
+                                                    headers: { "Content-Type": "multipart/form-data" },
+                                                }
+                                            );
+
+                                            if (uploadRes.data?.imageUrl) {
+                                                setFormData((prev) => ({
+                                                    ...prev,
+                                                    images: [...prev.images, uploadRes.data.imageUrl],
+                                                }));
+                                            }
+                                        } catch (error) {
+                                            console.error("Upload failed:", error);
+                                            alert("Image upload failed");
                                         }
-                                    } catch (error) {
-                                        console.error("Upload failed:", error);
-                                        alert("Image upload failed");
-                                    }
-                                }}
-                            />
-                        </label>
+                                    }}
+                                />
+                            </label>
 
-                        {/* ADD BY URL */}
-                        <div className="add-image">
-                            <input
-                                type="text"
-                                value={newImageUrl}
-                                placeholder="Paste image URL"
-                                onChange={(e) => setNewImageUrl(e.target.value)}
-                            />
-                            <button type="button" onClick={handleAddImage}>
-                                Add
-                            </button>
+                            {/* ADD BY URL */}
+                            <div className="add-image">
+                                <input
+                                    type="text"
+                                    value={newImageUrl}
+                                    placeholder="Paste image URL"
+                                    onChange={(e) => setNewImageUrl(e.target.value)}
+                                />
+                                <button type="button" onClick={handleAddImage}>
+                                    Add
+                                </button>
+                            </div>
                         </div>
                     </div>
 
