@@ -255,13 +255,14 @@ const HostLayout = () => {
       formData.images.forEach((file) => data.append("images", file));
 
       const res = await axios.post(
-        "http://localhost:5000/api/host/create",
+        `${process.env.REACT_APP_API_BASE}/api/host/create`,
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },
           withCredentials: true,
         }
       );
+
 
       if (res.data.success) {
         alert("✅ Listing created successfully!");
